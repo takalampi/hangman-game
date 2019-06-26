@@ -29,8 +29,8 @@ async function initGame() {
     hasWon = false;
     rawRandomWord = await getRandomWord();
     console.log(rawRandomWord)
-    unmaskedRandomWord = createUnmaskedWord(rawRandomWord); // ['r', 'a', 'p', 'h']
-    maskedRandomWord = createMaskedWord(rawRandomWord); // ['_', '_', '_', '_', ]
+    unmaskedRandomWord = createUnmaskedWord(rawRandomWord); // ['d', 'o', 'g']
+    maskedRandomWord = createMaskedWord(rawRandomWord); // ['_', '_', '_' ]
 }
 
 function takeTurn () {
@@ -43,10 +43,9 @@ function takeTurn () {
         alert("Already tried that letter. Pick a new one!")
         return; // display error message?
     }
-    // TODO: if they've used a letter, don't allow them to use it again, display a message, start take turn again
+    
 
     for (var i = 0; i < unmaskedRandomWord.length; i++) {
-        // TODO: push the letters to the array of usedLetters
         if (letterGuessed === unmaskedRandomWord[i]) {
             maskedRandomWord[i] = letterGuessed;
             guessedCorrectly = true;
@@ -83,10 +82,6 @@ function createMaskedWord(randomWord) {;
         return '_ ';
     });
 }
-
-// make used letters visible
-// messaging
-// API - don't include words without hyphen or space
 
 
 
